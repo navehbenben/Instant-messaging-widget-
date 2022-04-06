@@ -1,0 +1,10 @@
+
+.center_items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box_login{
+
+    background-color: beige;
+}
