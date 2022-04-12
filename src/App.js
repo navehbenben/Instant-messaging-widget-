@@ -1,10 +1,11 @@
 import Register from "./register";
+import ChatPage from "./chat_page";
 
 function App() {
   return (
-    <div class="gap-3 bg-gradient ">
-      <Register />
-    </div>
+    
+      <ChatPage />
+    
   );
 }
 

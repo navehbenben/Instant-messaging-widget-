@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: blueviolet;
+  height: 100%;
 }
 
 code {
@@ -15,4 +16,12 @@ code {
 
 btn-primary {
   background-color: blueviolet;
+}
+
+max-height{
+  height: 100%;
+}
+
+.max{
+  height: 100%;
 }

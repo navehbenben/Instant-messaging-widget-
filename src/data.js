@@ -15,7 +15,7 @@ let conversations = [
     {type: "Text", sender: "Kelly", reciever: "Moran", content: "woa!", date_time: Date('December 17, 2022 03:27:10')},
 ]
 let users = [
-    {user_name: "Alon", nick_name: "Alon11", picture: "", password: "Al1234", contacts: []},
+    {user_name: "Alon", nick_name: "Alon11", picture: "", password: "Al1234", contacts: [],messages:[]},
     {user_name: "Moran", nick_name: "MRI111", picture: "", password: "MoraN4321", contacts: []},
     {user_name: "Kelly", nick_name: "kl1", picture: "", password: "987654", contacts: []},
     
@@ -52,3 +52,4 @@ export default function add_contact(params){
 export default function add_message(params){
     conversations.push(params);
 }
+
