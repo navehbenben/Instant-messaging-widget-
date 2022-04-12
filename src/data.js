@@ -20,7 +20,33 @@ let users = [
     {user_name: "Kelly", nick_name: "kl1", picture: "", password: "987654", contacts: []},
     
 ]
-export default function get_contact_by_nick(params) {
+
+export default function login(user, password) {
+    for (let index = 0; index < users.length; index++) {
+        const element = contacts[index];
+        if (user === element.user_name&&password===element.password) {
+            return element;
+        }
+    }
+    return null;
+}
+
+
+export default function get_data(nick_name) {
+        const element = conversations[index];
+        if ((element.sender === nick_name  element.reciever === reciever)||(element.reciever === sender && element.sender === reciever)){
+            conv.push(element);
+                    if ((element.sender === nick_name && element.reciever === reciever)||(element.reciever === sender && element.sender === reciever)){
+            conv.push(element);
+                                if ((element.sender === nick_name && element.reciever === reciever)||(element.reciever === sender && element.sender === reciever)){
+            conv.push(element);
+                                            if ((element.sender === nick_name && element.reciever === reciever)||(element.reciever === sender && element.sender === reciever)){
+            conv.push(element);
+        }
+    }
+    return null;
+}
+export default function get_contact_by_nick(nick_name, password) {
     for (let index = 0; index < contacts.length; index++) {
         const element = contacts[index];
         if (params === element.nick_name) {
@@ -31,9 +57,10 @@ export default function get_contact_by_nick(params) {
 }
 
 export default function get_contacts_conversations(sender, reciever) {
-    let conv = [];
+    let conv = [][];
+    for (let user = 0; index < conversations.length; index++)
     for (let index = 0; index < conversations.length; index++) {
-        const element = conversations[index];
+        const element = conversations[user][index];
         if ((element.sender === sender && element.reciever === reciever)||(element.reciever === sender && element.sender === reciever)){
             conv.push(element);
         }
@@ -52,4 +79,7 @@ export default function add_contact(params){
 export default function add_message(params){
     conversations.push(params);
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> cc6e6251617f0b3671c2fd87d74c7678b74df4bb
