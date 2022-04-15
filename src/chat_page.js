@@ -8,12 +8,19 @@ class ChatPage extends React.Component {
         this.setState(props);
     }
 
-    message(mess,num) {
+    message(mess,sender) {
+        let color = "primary";
+        let side = "start";
+        if (sender){
+            color = "secondary";
+            side = "end";
+        }
         return (
-            
-                <div class={`alert alert-primary p-2 m-3 w-75 position-absolute rounded-end ${num}-0 `} role="alert">
+            <div class="w-100 position-absolute">
+                <div class={`alert alert-${color} p-2 m-3 w-75 position-absolute rounded-end ${side}-0 `}>
                     {mess}
                 </div>
+            </div>
             
             
         );
@@ -27,14 +34,21 @@ class ChatPage extends React.Component {
         return (
             <>
                 <a href="#" class="list-group-item list-group-item-action">
+                    <div>
                     <img src={picture} alt="" width="30" height="30" class="d-inline-block align-text-top rounded-circle border border-3" />
+                    <span class="m-3">
                     {nickname}
-                    <p>
-                        {lastMessage}
-                    </p>
+                    </span>
+                    </div>
+                    <div class="d-flex  justify-content-between">
                     <span>
+                        {lastMessage} 
+                    </span>
+                    <span>
+                        14:50
 
                     </span>
+                    </div>
                 </a>
             </>
         )
@@ -104,10 +118,10 @@ class ChatPage extends React.Component {
                     <div class="row align-items-start">
                         {this.side_bar()}
                         <div class="col bg-light vh-100 position-relative">
-                            <ul class="d-flex flex-column bd-highlight mb-3 align-items-xxl-stretch">
-                                {this.message("hi","start")}
-                                {this.message("hi","end")}
-                            </ul>
+                            <div class=" row row-col-1 justify-content-between">
+                                {this.message("hi",true)}
+                                {this.message("hi",false)}
+                            </div>
                             {this.send_form()}
                         </div>
                     </div>
