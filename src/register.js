@@ -5,19 +5,21 @@ import './index.css';
 class Register extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { user_name: '', nickname: '', picture: '', password: '', verify: '' };
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
+
     }
     handleSubmit(event){
-        let { user_name, nickname, picture, password, verify } = this.state
+        //let { user_name, nickname, picture, password, verify } = this.state
         event.preventDefault()
-        alert(this.state.nickname)
+        alert(this.input.password)
         
     }
 
-    handleChange(event){
-        this.setState({[event.target.name] : event.target.value})
+    onChange(event) {
+        this.setState({
+          [event.target.name]: event.target.value
+        })
     }
     Password(str,id) {
         return (
@@ -26,7 +28,7 @@ class Register extends React.Component {
                     <label for="inputPassword6" class="col-form">{str}</label>
                 </div>
                 <div class="col-auto">
-                    <input type="password" id={id} class="form-control" value={this.state}  onChange={this.handleChange}/>
+                    <input type="password" class="form-control"  defaultValue="Bob" ref={this.input}/>
                 </div>
             </div>
         );
@@ -38,7 +40,7 @@ class Register extends React.Component {
                     <label for="inputPassword6" class="col-form">{string}</label>
                 </div>
                 <div class="col-auto">
-                    <input type="Text" class="form-control" value={this.state}  onChange={this.handleChange} />
+                    <input type="Text" class="form-control"  defaultValue="Bob" ref={this.input} />
                 </div>
             </div>
         );
@@ -65,7 +67,7 @@ class Register extends React.Component {
                         <div class="row">
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Upload your profile picture</label>
-                                <input class="form-control" type="file" value={this.state.picture} />
+                                <input class="form-control" type="file" ref={this.input} />
                             </div>
                         </div>
                         <div class="row">
@@ -75,7 +77,7 @@ class Register extends React.Component {
 
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="submit" class="btn btn-primary">Register</button>
+                        <button type="submit" value="Submit" class="btn btn-primary">Register</button>
                         <button type="button" class="btn btn-link">
                             Already registered? click to sign in!
                         </button>

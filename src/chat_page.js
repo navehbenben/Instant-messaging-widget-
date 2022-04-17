@@ -118,7 +118,7 @@ class ChatPage extends React.Component {
                     <div class="row align-items-start">
                         {this.side_bar()}
                         <div class="col bg-light vh-100 position-relative">
-                            <div class=" row row-col-1 justify-content-between">
+                            <div class=" row row-col-1 position-relative">
                                 {this.message("hi",true)}
                                 {this.message("hi",false)}
                             </div>
