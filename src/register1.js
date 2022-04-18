@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class Form extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Form extends Component {
     if (password != verify) {
       alert("make sure you have copied exactly the password and verified it.")
     }
-    if (!password.match("(([A-Z]|[0-9]|[a-z])+)")){
+    if (!password.match("(([A-Z]|[0-9]|[a-z])+)")) {
       alert("your password is not good")
     }
     alert(`
@@ -36,37 +37,52 @@ class Form extends Component {
   render() {
     return (
       <div class="card rounded-9 shadow container-sm px-4 gx-5 col-md-6">
-        <div class="justify-content-center mx-auto">
-          <p>Welcome!</p>
-          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#6f42c1" class="bi bi-person-fill" viewBox="0 0 16 16">
-            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-          </svg>
 
-          <p>Please fill the form to get in.</p>
-        </div>
-        <form class="form-control p-4 d-flex" onSubmit={this.handleSubmit}>
-          <p class="row row-cols-2">
-          <div class="col">
-            <label htmlFor='user_name' class="col-form p-2">User name</label>
-            <input
-              name='user_name'
-              value={this.state.user_name}
-              onChange={this.handleChange}
-              class="form-control"
-            />
+        <form onSubmit={this.handleSubmit}>
+          <div class="card-body">
+          <div class="d-grid gap-2 col-6 mx-auto">
+            <p>Welcome!</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="#6f42c1" class="bi bi-person-fill" viewBox="0 0 16 16">
+              <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            </svg>
+
+            <p>Please fill the form to get in.</p>
           </div>
-          <div class="col">
-            <label htmlFor='name' class="col-form p-2">Nickname</label>
-            <input
-              name='nickname'
-              value={this.state.nickname}
-              onChange={this.handleChange}
-              class="form-control"
-            />
+          <div class="row">
+            <div class="col">
+              <div class="col-auto">
+                <label htmlFor='user_name' class="col-form">User name</label>
+              </div>
+              <div class="col-auto">
+                <input
+                  name='user_name'
+                  value={this.state.user_name}
+                  onChange={this.handleChange}
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="col-auto">
+                <label htmlFor='name' class="col-form">Nickname</label>
+              </div>
+              <div class="col-auto">
+                <input
+                  name='nickname'
+                  value={this.state.nickname}
+                  onChange={this.handleChange}
+                  class="form-control"
+                />
+              </div>
+            </div>
           </div>
-          </p>
-          <p class="row row-cols-2">
-            <input type="file" name='picture' value={this.state.picture} onChange={this.handleChange} class="form-control" />
+          <div class="row">
+            <div class="mb-3">
+            <label for="formFile" class="form-label">Upload your profile picture</label>
+              <input type="file" name='picture' value={this.state.picture} onChange={this.handleChange} class="form-control" />
+            </div>
+          </div>
+          <div class = "row">
           <div class="col">
             <label htmlFor='password' class="col-form p-2">Password</label>
             <input
@@ -87,11 +103,16 @@ class Form extends Component {
               class="form-control"
             />
           </div>
-          </p>
-          <div>
+          </div>
+          </div>
+
+          <div class="d-grid gap-2 col-6 mx-auto">
             <button class="btn btn-primary align-items-end">Create Account</button>
           </div>
         </form>
+        <Link to="/" type="button" class="btn btn-link">
+                            Already registered? click to sign in!
+                        </Link>
       </div>
     )
   }
