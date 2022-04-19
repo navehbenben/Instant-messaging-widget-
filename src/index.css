@@ -25,3 +25,29 @@ max-height{
 .max{
   height: 100%;
 }
+
+.message{
+  margin-bottom: 3.5em;
+  display: inline-block;
+}
+
+.picture{
+  margin-bottom: 17em;
+}
+
+.scroll {
+  height: 90%;
+  overflow-y:scroll;
+  overflow-x: hidden;
+}
+
+.timenotes {
+  font-size: x-small;
+  margin-inline: 1pc;
+  color: gray;
+}
+
+.profile{
+  background-color: rgb(191, 139, 240);
+  
+}
